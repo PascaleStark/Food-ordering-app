@@ -1,6 +1,5 @@
 import CartIcon from "../Cart/CartIcon";
 import styles from "./HeaderCartButton.module.css";
-import cartCtx from "../../store/cart-context";
 import { useContext, useEffect, useState } from "react";
 import CartContext from "../../store/cart-context";
 const HeaderCartButton = (props) => {
@@ -14,7 +13,7 @@ const HeaderCartButton = (props) => {
   const btnClasses = `${styles.button} ${btnIsHighlighted ? styles.bump : ""}`;
 
   useEffect(() => {
-    if (cartCtx.items.length === 0) {
+    if (items.length === 0) {
       return;
     }
     setBtnIsHighlighted(true);
